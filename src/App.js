@@ -1,40 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
+import DataDisplay from './DataDisplay';
 
-const mysql = require('mysql');
+// const express = require('express');
+// const mysql = require('mysql');
+// const cors = require('cors');
 
-// Replace these values with your Azure MySQL database credentials
-const dbConfig = {
-  host: 'mayoandeggsdb-server.database.windows.net',
-  user: 'mayo@amayo0925gmail.onmicrosoft.com',
-  password: 'Amelia309%%',
-  database: 'mayoandeggsdb-server',
-};
+// const app = express();
 
-// Create a connection to the database
-const connection = mysql.createConnection(dbConfig);
+// // Replace these values with your Azure MySQL database credentials
+// const dbConfig = {
+//   host: 'mayoandeggsdb-server.database.windows.net',
+//   user: 'mayo@amayo0925gmail.onmicrosoft.com',
+//   password: 'Amelia309%%',
+//   database: 'mayoandeggsdb-server',
+// };
 
-// Connect to the database
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    return;
-  }
+// // Create a pool to manage database connections
+// const pool = mysql.createPool(dbConfig);
 
-  console.log('Connected to the database.');
+// app.use(cors());
 
-  // Perform your database operations here
-  // For example, you can execute queries, insert data, etc.
+// // Define an API endpoint to fetch data from the database
+// app.get('/data', (req, res) => {
+//   const sqlQuery = 'SELECT * FROM your_table_name'; // Replace your_table_name with the actual table name in your database
+//   pool.query(sqlQuery, (err, result) => {
+//     if (err) {
+//       console.error('Error executing the SQL query:', err);
+//       res.status(500).json({ error: 'Error fetching data from the database' });
+//     } else {
+//       res.json(result);
+//     }
+//   });
+// });
 
-  // When you're done with the database connection, don't forget to end it
-  connection.end((err) => {
-    if (err) {
-      console.error('Error closing the database connection:', err);
-      return;
-    }
-    console.log('Database connection closed.');
-  });
-});
+// // Start the server
+// const PORT = 5000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
 
 function App() {
   return (
